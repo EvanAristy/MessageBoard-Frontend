@@ -6,8 +6,8 @@ const Nav = () => {
     <div className="ui inverted segment">
       <div className="ui inverted secondary pointing menu">
         <Link className="olive item" to='/'>Home</Link>
-        <Link className="blue item" to='/messages'>Messages</Link>
         <Link className="orange item" to='/info'>Info</Link>
+        <Link className="blue item" to='/messages'>Messages</Link>
         <div className="right menu">
             <Link className="violet item active" to='/signin'>Sign Up/Log In</Link>
         </div>

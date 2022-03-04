@@ -31,7 +31,7 @@ const Messages = () => {
       if(response.status === 200) {
         setPost('')
       }
-      
+
       fetchMessages()
     } catch(err) {
       console.log(err)
@@ -70,6 +70,7 @@ const Messages = () => {
               type="text"
               value={post}
               onChange={e => setPost(e.target.value)}
+              rows="2"
             />
           </div>
           <button className="ui primary submit labeled icon button" type="submit">

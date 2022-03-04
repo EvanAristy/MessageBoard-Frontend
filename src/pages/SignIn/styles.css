@@ -1,0 +1,22 @@
+#forms{
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+}
+
+#log-in{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+#sign-up{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.form{
+    width: 80%;
+    /* background-color: aquamarine; */
+}

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const Messages = () => {
+const Messages = ({ user }) => {
   const [messages, setMessages] = useState([]);
   const [post, setPost] = useState('')
 
@@ -13,7 +13,7 @@ const Messages = () => {
     try {
       const response = await axios.get("http://localhost:8080/api/v1/allmessages");
 
-      // console.log(response);
+      console.log("messages", response);
       setMessages(response.data);
     } catch (err) {
       console.log(err);
@@ -37,7 +37,7 @@ const Messages = () => {
       console.log(err)
     }
   };
-
+console.log("hey this is the current user", user)
   return (
     <div>
       <div id="message-board">
@@ -46,7 +46,7 @@ const Messages = () => {
             <div className="ui comments" key={message.id}>
               <div className="comment">
                 <div className="content">
-                  <a className="author">{message.user}</a>
+                  <a className="author">{user}</a>
                   <div className="metadata">
                     <div className="date">{message.date}</div>
                     <div className="rating">

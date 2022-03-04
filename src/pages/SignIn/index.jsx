@@ -4,9 +4,9 @@ import React from "react";
 // css
 import "./styles.css"
 
-const SignIn = () => {
+const SignIn = ({ setUser }) => {
 
-    const [users, setUsers] = useState([])
+    const [accounts, setAccounts] = useState([])
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [nickName, setNickName] = useState('')
@@ -20,7 +20,7 @@ const SignIn = () => {
             const response = await axios.get('http://localhost:8080/api/v1/allusers')
 
             console.log(response)
-            setUsers(response.data)
+            setAccounts(response.data)
 
         } catch(err) {
             console.log(err)
@@ -45,6 +45,7 @@ const SignIn = () => {
             }
 
             fetchUsers()
+            setUser(nickName)
         } catch(err) {
             console.log(err)
         }

@@ -13,7 +13,7 @@ const Messages = ({ user }) => {
     try {
       const response = await axios.get("http://localhost:8080/api/v1/allmessages");
 
-      console.log("messages", response);
+      // console.log("messages", response);
       setMessages(response.data);
     } catch (err) {
       console.log(err);
@@ -37,7 +37,8 @@ const Messages = ({ user }) => {
       console.log(err)
     }
   };
-console.log("hey this is the current user", user)
+
+  // console.log("hey this is the current user", user)
   return (
     <div>
       <div id="message-board">

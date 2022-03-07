@@ -22,7 +22,7 @@ function App() {
         <Routes>
           <Route path='info' element={<Info />} />
           <Route path='messages' element={<Messages user={user}/>} />
-          <Route path='signin' element={<SignIn setUser={setUser} />} />
+          <Route path='signin' element={<SignIn user={user} setUser={setUser} />} />
         </Routes>
       </UserContext.Provider>
     </div>

@@ -4,12 +4,13 @@ import React from "react";
 // css
 import "./styles.css"
 
-const SignIn = ({ setUser }) => {
+const SignIn = ({ user, setUser }) => {
 
     const [accounts, setAccounts] = useState([])
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [nickName, setNickName] = useState('')
+    const [userName, setUserName] = useState('')
 
     useEffect(() => {
         fetchUsers()
@@ -19,7 +20,7 @@ const SignIn = ({ setUser }) => {
         try {
             const response = await axios.get('http://localhost:8080/api/v1/allusers')
 
-            console.log(response)
+            // console.log(response)
             setAccounts(response.data)
 
         } catch(err) {
@@ -45,7 +46,18 @@ const SignIn = ({ setUser }) => {
             }
 
             fetchUsers()
-            setUser(nickName)
+        } catch(err) {
+            console.log(err)
+        }
+    }
+
+    const logIn = async (e) => {
+        e.preventDefault()
+        try {
+            const response = await axios.get(`http://localhost:8080/api/v1/allusers/${userName}`)
+
+            setUser(response.data[0].nickname)
+            // console.log(user)
         } catch(err) {
             console.log(err)
         }
@@ -79,7 +91,7 @@ const SignIn = ({ setUser }) => {
                         <label>User Name</label>
                         <input 
                             type="text" 
-                            name="last-name" 
+                            name="user-name" 
                             placeholder="User Name" 
                             value={nickName}
                             onChange={e => setNickName(e.target.value)}
@@ -92,10 +104,16 @@ const SignIn = ({ setUser }) => {
             </div>
 
             <div id="log-in">
-                <form className="ui form">
+                <form className="ui form" onSubmit={logIn}>
                     <div className="field">
                         <label>User Name</label>
-                        <input type="text" name="first-name" placeholder="First Name" />
+                        <input 
+                            type="text" 
+                            name="user-name" 
+                            placeholder="User Name"
+                            value={userName}
+                            onChange={e => setUserName(e.target.value)} 
+                        />
                     </div>
                     <button className="ui button" type="submit">
                         Log In

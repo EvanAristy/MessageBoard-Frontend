@@ -1,0 +1,39 @@
+#post{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    background-image: url(https://thumbs.dreamstime.com/z/seamless-pattern-social-networking-global-online-communication-instant-messaging-symbols-white-background-seamless-pattern-105701838.jpg);
+    background-size: cover;
+}
+
+#message-board{
+    height: 50%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    /* height: 50%; */
+    margin-top: 100px;
+    margin-bottom: 50px;
+    background-color: white;
+    padding: 30px;
+    border: 5px solid lightgreen;
+    border-radius: 5%;
+}
+
+#key-board{
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    background-color: white;
+    border: 5px solid lightblue;
+    border-radius: 20%;
+    padding: 10px;
+}
+
+.comments{
+    border: 2px dashed rgb(200, 151, 159);
+    padding: 5px;
+}

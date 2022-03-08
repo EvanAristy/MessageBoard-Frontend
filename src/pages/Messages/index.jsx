@@ -1,29 +1,48 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+// css
+import './styles.css'
 
 const Messages = ({ user }) => {
   const [messages, setMessages] = useState([]);
+  const [characterCount, setCharacterCount] = useState(0)
   const [post, setPost] = useState('')
+  const [userId, setUserId] = useState()
 
   useEffect(() => {
     fetchMessages();
+    whoWroteIt();
   }, []);
 
   const fetchMessages = async () => {
     try {
       const response = await axios.get("http://localhost:8080/api/v1/allmessages");
 
-      // console.log("messages", response);
+      console.log("messages", response);
       setMessages(response.data);
     } catch (err) {
       console.log(err);
     }
   };
 
+  const whoWroteIt = async () => {
+    try {
+      const response = await axios.get(`http://localhost:8080/api/v1/allusers/${user}`);
+
+      console.log('HERE', response.data[0].id )
+      setUserId(response.data[0].id)
+      console.log('HEREnow', userId)
+    } catch(err) {
+      console.log(err)
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     const newMessage = {
-      post: post
+      post: post,
+      // THIS ISNT WORKING NEED HELP !!!!!!
+      // user: userId
     }
     try {
       const response = await axios.post("http://localhost:8080/api/v1/addmessage", newMessage);
@@ -33,6 +52,7 @@ const Messages = ({ user }) => {
       }
 
       fetchMessages()
+      setCharacterCount(0)
     } catch(err) {
       console.log(err)
     }
@@ -40,7 +60,7 @@ const Messages = ({ user }) => {
 
   // console.log("hey this is the current user", user)
   return (
-    <div>
+    <div id='post'>
       <div id="message-board">
         {messages.map((message) => {
           return (
@@ -70,9 +90,10 @@ const Messages = ({ user }) => {
               name="post" 
               type="text"
               value={post}
-              onChange={e => setPost(e.target.value)}
+              onChange={e => setPost(e.target.value) & setCharacterCount(e.target.value.length)}
               rows="2"
             />
+            <p>{characterCount}/200</p>
           </div>
           <button className="ui primary submit labeled icon button" type="submit">
             <i className="icon edit"></i> Add Comment

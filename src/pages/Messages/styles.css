@@ -1,5 +1,5 @@
 #post{
-    height: 100vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
@@ -31,6 +31,10 @@
     border: 5px solid lightblue;
     border-radius: 20%;
     padding: 10px;
+}
+
+.reply{
+    width: 60%;
 }
 
 .comments{

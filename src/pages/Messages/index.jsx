@@ -29,7 +29,6 @@ const Messages = ({ user }) => {
     try {
       const response = await axios.get(`http://localhost:8080/api/v1/allusers/${user}`);
 
-      console.log('HERE', response.data[0].id )
       setUserId(response.data[0].id)
       // console.log('HEREnow', userId)
     } catch(err) {
@@ -45,12 +44,12 @@ const Messages = ({ user }) => {
       // user: userId
     }
     try {
-      const response = await axios.post("http://localhost:8080/api/v1/addmessage", newMessage);
+      const response = await axios.post(`http://localhost:8080/api/v1/addmessage/${user}`, newMessage);
 
       if(response.status === 200) {
         setPost('')
       }
-
+      console.log("JDJFJFJFJFJ",user)
       fetchMessages()
       setCharacterCount(0)
     } catch(err) {
@@ -67,7 +66,7 @@ const Messages = ({ user }) => {
             <div className="ui comments" key={message.id}>
               <div className="comment">
                 <div className="content">
-                  <a className="author">{user}</a>
+                  <a className="author">{message.user.nickname}</a>
                   <div className="metadata">
                     <div className="date">{message.date}</div>
                     <div className="rating">
@@ -84,7 +83,7 @@ const Messages = ({ user }) => {
 
       <div id="key-board">
         <form className="ui reply form" onSubmit={handleSubmit}>
-          <div className="field">
+          <div className="field text">
             <label htmlFor="post">Type your message</label>
             <textarea 
               name="post" 

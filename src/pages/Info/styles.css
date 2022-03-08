@@ -1,0 +1,34 @@
+#info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 90vh;
+    background-image: url(https://image.shutterstock.com/image-vector/seamless-pattern-social-media-networking-600w-1039923571.jpg);
+    background-size: cover;
+}
+
+.about-us{
+    display: flex;
+    flex-direction: column;
+    background-color: blue;
+    width: 40%;
+    height: fit-content;
+    text-align: center;
+    padding: 20px;
+    margin-top: 15%;
+}
+
+.terms-and-conditions{
+    /* display: flex;
+    flex-direction: column; */
+    background-color: red;
+    width: 40%;
+    height: fit-content;
+    text-align: center;
+    padding: 20px;
+    margin-top: 15%;
+}
+
+ul{
+    justify-self: end;
+}

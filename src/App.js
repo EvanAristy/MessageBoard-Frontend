@@ -3,6 +3,7 @@ import { useState } from "react"
 // components
 import Nav from './components/Nav';
 // pages
+import Home from './pages/Home';
 import Info from './pages/Info';
 import SignIn from './pages/SignIn';
 import Messages from './pages/Messages';
@@ -20,9 +21,10 @@ function App() {
       <UserContext.Provider value={user}>
         <Nav />
         <Routes>
+          <Route path='/' element={<Home />} />
           <Route path='info' element={<Info />} />
           <Route path='messages' element={<Messages user={user}/>} />
-          <Route path='signin' element={<SignIn user={user} setUser={setUser} />} />
+          <Route path='signup' element={<SignIn user={user} setUser={setUser} />} />
         </Routes>
       </UserContext.Provider>
     </div>

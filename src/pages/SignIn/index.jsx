@@ -3,6 +3,7 @@ import axios from "axios";
 import React from "react";
 // css
 import "./styles.css"
+import { useNavigate } from 'react-router-dom';
 
 const SignIn = ({ user, setUser }) => {
 
@@ -11,6 +12,7 @@ const SignIn = ({ user, setUser }) => {
     const [lastName, setLastName] = useState('')
     const [nickName, setNickName] = useState('')
     const [userName, setUserName] = useState('')
+    const navigate = useNavigate()
 
     useEffect(() => {
         fetchUsers()
@@ -46,6 +48,7 @@ const SignIn = ({ user, setUser }) => {
             }
 
             fetchUsers()
+            changeForm()
         } catch(err) {
             console.log(err)
         }
@@ -58,15 +61,23 @@ const SignIn = ({ user, setUser }) => {
 
             setUser(response.data[0].nickname)
             // console.log(user)
+            navigate('/messages')
         } catch(err) {
             console.log(err)
         }
     }
 
+    const changeForm = () => {
+        document.querySelector("#form1").classList.add("hidden")
+        document.querySelector(".skip").classList.add("hidden")
+        document.querySelector("#form2").classList.remove("hidden")
+    }
+
     return (
         <div id="forms">
-            <div id="sign-up">
-                <form className="ui form" onSubmit={signUp}>
+
+                <form id='form1' className="ui form sign-up" onSubmit={signUp}>
+                    <h1 className="signin-title">Create an account:</h1>
                     <div className="field">
                         <label>First Name</label>
                         <input 
@@ -97,14 +108,13 @@ const SignIn = ({ user, setUser }) => {
                             onChange={e => setNickName(e.target.value)}
                         />
                     </div>
-                    <button className="ui button" type="submit">
+                    <button className="ui button" type="submit" onClick={changeForm}>
                         Sign Up
                     </button>
                 </form>
-            </div>
-
-            <div id="log-in">
-                <form className="ui form" onSubmit={logIn}>
+            
+                <form id='form2' className="ui form log-in hidden" onSubmit={logIn}>
+                    <h1>Sign Into Existing Account</h1>
                     <div className="field">
                         <label>User Name</label>
                         <input 
@@ -119,8 +129,12 @@ const SignIn = ({ user, setUser }) => {
                         Log In
                     </button>
                 </form>
-            </div>
+
+                <button className='skip' onClick={changeForm}>I Already Have An Account</button>
+
         </div>
+
+        
     );
 };
 

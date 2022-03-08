@@ -31,7 +31,7 @@ const Messages = ({ user }) => {
 
       console.log('HERE', response.data[0].id )
       setUserId(response.data[0].id)
-      console.log('HEREnow', userId)
+      // console.log('HEREnow', userId)
     } catch(err) {
       console.log(err)
     }

@@ -1,22 +1,39 @@
 #forms{
     display: flex;
-    flex-direction: row;
-    /* align-items: center; */
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-image: url(https://image.shutterstock.com/image-vector/seamless-pattern-social-media-networking-600w-1039923571.jpg);
+    background-size: cover;
+    /* justify-content: center; */
 }
 
-#log-in{
-    width: 50%;
-    display: flex;
+.sign-up{
+    width: 60%;
     justify-content: center;
+    background-color: white;
+    padding: 5%;
+    border: 5px solid lightblue;
+    margin-top: 180px;
 }
 
-#sign-up{
-    width: 50%;
-    display: flex;
+.log-in{
+    width: 60%;
     justify-content: center;
+    background-color: white;
+    padding: 5%;
+    border: 5px solid lightgreen;
+    margin-top: 300px;
+    /* display: none; */
 }
 
-.form{
-    width: 80%;
-    /* background-color: aquamarine; */
+.skip{
+    margin: 5%;
+}
+
+/* RE-USABLES */
+
+.hidden{
+    display: none;
 }

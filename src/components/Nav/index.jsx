@@ -30,7 +30,7 @@ const Nav = ({ user, setUser }) => {
             ?
             <NavLink className="violet item" activeClassName="violet item active" to='/signup'>Sign Up/Log In</NavLink>
             :
-            <NavLink className="violet item" activeClassName="violet item active" to='/' onClick={handleLogOut}>Log-Out</NavLink>
+            <NavLink className="violet item" to='/' onClick={handleLogOut}>Log-Out</NavLink>
           }
         </div>
       </div>

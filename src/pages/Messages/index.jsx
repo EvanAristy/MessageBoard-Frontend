@@ -9,6 +9,12 @@ const Messages = ({ user }) => {
   const [post, setPost] = useState('')
   const [userId, setUserId] = useState()
 
+  // THIS IS TO SCROLL TO THE BOTTOM OF MESSAGE BOARD. IT'S A LITTLE BUGGY
+  // window.setInterval(function() {
+  //   const elem = document.getElementById('message-board');
+  //   elem.scrollTop = elem.scrollHeight;
+  // }, 5000);
+
   useEffect(() => {
     fetchMessages();
     whoWroteIt();

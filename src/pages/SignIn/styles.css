@@ -1,3 +1,8 @@
+/* *{
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.5rem;
+  } */
+
 #forms{
     display: flex;
     flex-direction: column;
@@ -15,7 +20,7 @@
     background-color: white;
     padding: 5%;
     border: 5px solid darkviolet;
-    margin-top: 180px;
+    margin-top: 100px;
 }
 
 .log-in{
@@ -24,12 +29,8 @@
     background-color: white;
     padding: 5%;
     border: 5px solid lightgreen;
-    margin-top: 300px;
+    margin-top: 100px;
     /* display: none; */
-}
-
-#create-account{
-    
 }
 
 #skip{

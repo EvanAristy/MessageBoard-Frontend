@@ -8,6 +8,7 @@ const Info = () => {
 
             <div className="about-us">
                 <h1>About Us</h1>
+                <br />
                 <ul>
                     <li>Fun, easy way to stay in touch with friends</li>
                     <li>Always growing. We will continue to give updates to enhance user experience </li>
@@ -16,6 +17,7 @@ const Info = () => {
 
             <div className="terms-and-conditions">
                 <h1>Terms and Conditions</h1>
+                <br />
                 <ul>
                     <li>No bullying</li>
                     <li>Be respectful</li>

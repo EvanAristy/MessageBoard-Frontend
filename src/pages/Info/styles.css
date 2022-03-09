@@ -10,25 +10,38 @@
 .about-us{
     display: flex;
     flex-direction: column;
-    background-color: blue;
+    background-color: white;
     width: 40%;
     height: fit-content;
     text-align: center;
-    padding: 20px;
+    padding: 5%;
     margin-top: 15%;
+    border: 5px dashed greenyellow;
+}
+
+.about-us > h1{
+    color: darkgreen;
 }
 
 .terms-and-conditions{
     /* display: flex;
     flex-direction: column; */
-    background-color: red;
-    width: 40%;
+    background-color: white;
+    width: 50%;
     height: fit-content;
     text-align: center;
-    padding: 20px;
+    padding: 5%;
     margin-top: 15%;
+    border: 5px dashed orange;
+}
+
+.terms-and-conditions > h1{
+    color: orangered;
 }
 
 ul{
-    justify-self: end;
+    list-style-type: circle;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
 }

@@ -49,7 +49,7 @@ const Messages = ({ user }) => {
       if(response.status === 200) {
         setPost('')
       }
-      console.log("JDJFJFJFJFJ",user)
+      // console.log("JDJFJFJFJFJ",user)
       fetchMessages()
       setCharacterCount(0)
     } catch(err) {
@@ -95,7 +95,7 @@ const Messages = ({ user }) => {
             <p>{characterCount}/200</p>
           </div>
           <button className="ui primary submit labeled icon button" type="submit">
-            <i className="icon edit"></i> Add Comment
+            <i className="icon edit"></i> Post
           </button>
         </form>
       </div>

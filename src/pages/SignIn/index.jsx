@@ -69,7 +69,8 @@ const SignIn = ({ user, setUser }) => {
 
     const changeForm = () => {
         document.querySelector("#form1").classList.add("hidden")
-        document.querySelector(".skip").classList.add("hidden")
+        document.querySelector("#skip").classList.remove("ui")
+        document.querySelector("#skip").classList.add("hidden")
         document.querySelector("#form2").classList.remove("hidden")
     }
 
@@ -108,8 +109,8 @@ const SignIn = ({ user, setUser }) => {
                             onChange={e => setNickName(e.target.value)}
                         />
                     </div>
-                    <button className="ui button" type="submit" onClick={changeForm}>
-                        Sign Up
+                    <button id='create-account' className="ui inverted violet button" type="submit" onClick={changeForm}>
+                    <i class="plus icon"></i> Sign Up
                     </button>
                 </form>
             
@@ -125,12 +126,14 @@ const SignIn = ({ user, setUser }) => {
                             onChange={e => setUserName(e.target.value)} 
                         />
                     </div>
-                    <button className="ui button" type="submit">
-                        Log In
+                    <button id='pick-account' className="ui olive button" type="submit">
+                    <i class="sign in alternate icon"></i> Log In
                     </button>
                 </form>
 
-                <button className='skip' onClick={changeForm}>I Already Have An Account</button>
+                <button id='skip' className="huge ui violet button" onClick={changeForm}>
+                <i class="forward icon"></i> I Already Have An Account
+                </button>
 
         </div>
 

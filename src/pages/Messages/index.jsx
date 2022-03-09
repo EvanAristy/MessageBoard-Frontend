@@ -82,22 +82,29 @@ const Messages = ({ user }) => {
       </div>
 
       <div id="key-board">
-        <form className="ui reply form" onSubmit={handleSubmit}>
-          <div className="field text">
-            <label htmlFor="post">Type your message</label>
-            <textarea 
-              name="post" 
-              type="text"
-              value={post}
-              onChange={e => setPost(e.target.value) & setCharacterCount(e.target.value.length)}
-              rows="2"
-            />
-            <p>{characterCount}/200</p>
-          </div>
-          <button className="ui primary submit labeled icon button" type="submit">
-            <i className="icon edit"></i> Post
-          </button>
-        </form>
+        {
+          !user
+          ?
+          <h1>Sign in to add a post</h1>
+          :
+          <form className="ui reply form" onSubmit={handleSubmit}>
+            <div className="field text">
+              <label htmlFor="post">Type your message</label>
+              <textarea 
+                name="post" 
+                type="text"
+                value={post}
+                onChange={e => setPost(e.target.value) & setCharacterCount(e.target.value.length)}
+                rows="2"
+              />
+              <p>{characterCount}/200</p>
+            </div>
+            <button className="ui primary submit labeled icon button" type="submit">
+            <i class="paper plane icon"></i> Post
+            </button>
+          </form>
+        }
+        
       </div>
     </div>
   );

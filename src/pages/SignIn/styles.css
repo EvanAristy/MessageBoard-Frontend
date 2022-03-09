@@ -14,7 +14,7 @@
     justify-content: center;
     background-color: white;
     padding: 5%;
-    border: 5px solid lightblue;
+    border: 5px solid darkviolet;
     margin-top: 180px;
 }
 
@@ -28,7 +28,11 @@
     /* display: none; */
 }
 
-.skip{
+#create-account{
+    
+}
+
+#skip{
     margin: 5%;
 }
 

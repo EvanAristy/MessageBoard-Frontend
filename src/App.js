@@ -19,7 +19,7 @@ function App() {
   return (
     <div className="App">
       <UserContext.Provider value={user}>
-        <Nav />
+        <Nav user={user} setUser={setUser} />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='info' element={<Info />} />

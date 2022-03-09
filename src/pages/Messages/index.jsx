@@ -76,7 +76,7 @@ const Messages = ({ user }) => {
                   <div className="metadata">
                     <div className="date">{message.date}</div>
                     <div className="rating">
-                      <i className="star icon"></i>5 Faves
+                      <i className="trash icon"></i>
                     </div>
                   </div>
                   <div className="text">{message.post}</div>

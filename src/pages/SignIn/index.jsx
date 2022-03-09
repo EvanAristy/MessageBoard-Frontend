@@ -110,7 +110,7 @@ const SignIn = ({ user, setUser }) => {
                         />
                     </div>
                     <button id='create-account' className="ui inverted violet button" type="submit" onClick={changeForm}>
-                    <i class="plus icon"></i> Sign Up
+                    <i className="plus icon"></i> Sign Up
                     </button>
                 </form>
             
@@ -127,12 +127,12 @@ const SignIn = ({ user, setUser }) => {
                         />
                     </div>
                     <button id='pick-account' className="ui olive button" type="submit">
-                    <i class="sign in alternate icon"></i> Log In
+                    <i className="sign in alternate icon"></i> Log In
                     </button>
                 </form>
 
                 <button id='skip' className="huge ui violet button" onClick={changeForm}>
-                <i class="forward icon"></i> I Already Have An Account
+                <i className="forward icon"></i> I Already Have An Account
                 </button>
 
         </div>

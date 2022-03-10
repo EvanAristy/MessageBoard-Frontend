@@ -15,18 +15,18 @@ Having major problems with Heroku. Will figure it out to deploy
 
 base: /api/v1
 
-(GET)search all users: /allusers 
-(GET)search user by id: /user/{id}
-(GET)search user by username: /alluser{nickname}
-(POST)create new user: /adduser
-(PUT)edit user: /user/{id}
-(DELETE)delete user: /user/{id}
-
-(GET)search all messages: /allmessages 
-(GET)search message by id: /message/{id}
-(POST)create new message: /addmessages/{username}
-(PUT)edit message: /message/{id}
-(DELETE)delete message: /message/{id}
+(GET)search all users: /allusers <br>
+(GET)search user by id: /user/{id} <br>
+(GET)search user by username: /alluser{nickname} <br>
+(POST)create new user: /adduser <br>
+(PUT)edit user: /user/{id} <br>
+(DELETE)delete user: /user/{id} <br>
+<br>
+(GET)search all messages: /allmessages <br>
+(GET)search message by id: /message/{id} <br>
+(POST)create new message: /addmessages/{username} <br>
+(PUT)edit message: /message/{id} <br>
+(DELETE)delete message: /message/{id} <br>
 
 
 ===== App =====

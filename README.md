@@ -33,13 +33,13 @@ base: /api/v1
 
 Meant to be a messaging app to chat with friends.
 
-JavaScript
-React
-Java - Backend
-Spring - Backend
-Html
-Css
-Semantic Ui - Css Framework
+JavaScript <br>
+React <br>
+Java - Backend <br>
+Spring - Backend <br>
+Html <br>
+Css <br>
+Semantic Ui - Css Framework <br>
 
 
 ===== Problems =====
